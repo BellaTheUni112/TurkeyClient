@@ -1,8 +1,16 @@
 import customtkinter as ctk
 import pymem
 from PIL import Image, ImageTk
+import sys
+import os
 APP_SIZE = "420x220"
 FONT = ("Segoe UI", 13)
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 def show_splash(image_path, duration=3000):
     splash = ctk.CTk()
     splash.overrideredirect(True)
